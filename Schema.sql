@@ -55,3 +55,13 @@ CREATE TABLE titles (
 );
 
 SELECT * FROM departments;
+
+DROP TABLE titles CASCADE;
+
+CREATE TABLE titles (
+	emp_no INT NOT NULL,
+	title VARCHAR NOT NULL,
+	from_date DATE NOT NULL,
+	to_date DATE NOT NULL,
+	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
+);
